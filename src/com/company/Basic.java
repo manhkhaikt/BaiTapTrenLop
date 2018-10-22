@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Basic {
     public static void main(String[] args) {
-      int[] a = {2, 4, 3, 5, 7};
+      int[] a = {2, 4, 1, 5, 7};
         System.out.println("Nhap phan tu can tim");
         Scanner sc = new Scanner(System.in);
 
@@ -30,15 +30,13 @@ public class Basic {
         System.out.println(Arrays.toString(d));
         System.out.println("--------------------------------");
 
-        int min = 0, max = 0;
+        int min = a[0], max = a[0];
         for(int i = 1; i < a.length; i++){
-            if(a[i]<a[i-1]) {
-                max = a[i-1];
-                min = a[i];
-            }
-            else{
+            if(max<a[i]) {
                 max = a[i];
-                min = a[i-1];
+            }
+            if (min>a[i]){
+                min = a[i];
             }
         }
         System.out.println("max: " +max + "  min: "+min);
