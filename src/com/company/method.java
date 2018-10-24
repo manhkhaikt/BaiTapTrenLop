@@ -11,13 +11,20 @@ public class method {
         System.out.println(checkPalindrome(input));
         System.out.println("--------------------------------------");
 
-
-        System.out.println("Nhap so n:");
-        int n = scan.nextInt();
+        int n;
+        do {
+            System.out.println("Nhap so n:");
+            n = scan.nextInt();
+        }
+        while (n % 2 != 0);
         System.out.println("Nhap fist number: ");
         int firstNumber = scan.nextInt();
-        System.out.println("So doi dien: " + circleOfNumbers(n, firstNumber));
-        System.out.println("-------------------------------------------");
+        if (firstNumber > n || firstNumber < 0) {
+            System.out.println("Khong co so doi dien");
+        } else {
+            System.out.println("So doi dien: " + circleOfNumbers(n, firstNumber));
+            System.out.println("-------------------------------------------");
+        }
 
         int[][] matrix = {{0, 1, 0, 2}, {0, 5, 0, 0}, {2, 0, 3, 3}};
         System.out.println("CodeBots: " + matrixElementsSum(matrix));
